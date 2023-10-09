@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import * as C from "./styles/app";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db } from "./services/firebase";
+import Loading from './components/loading';
+import Login from './components/login';
+import Sidebar  from './components/sidebar';
+
 
 function App() {
+
+  const [user, loading] = useAuthState(auth);
+
+  useEffect(() => {
+    if (user) {
+      db.collection("users").doc(user.uid).set({
+        email: user.email,
+        photoURL: user.photoURL,
+      });
+    }
+  }, [user]);
+
+  if (loading) return <Loading />;
+
+  if (!user) return <Login />;
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <C.Container>
+        <Sidebar />
+      </C.Container>
+    </>
   );
 }
 
