@@ -119,3 +119,8 @@ export const SubTitulo = styled.h4`
     margin-left: 2px;
   }
 `
+
+export const ImgFaculdade = styled.img`
+  width: 50px;
+  border-radius: 30px;
+`

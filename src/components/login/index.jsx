@@ -21,6 +21,7 @@ const Login = () => {
           <C.Titulo>SEJA BEM VINDO AO CHAT-APP!</C.Titulo>
           <C.SubTitulo>Realize seu login nas opções abaixo <BiSolidHandDown /> </C.SubTitulo>
           <C.Button onClick={handleSignin}>Login com Google</C.Button>
+          <C.ImgFaculdade src="https://play-lh.googleusercontent.com/Ri1jdAtBkyAT0CzTRVbAZDVbWt8PW-1RCB3YStjaIAAITwvKDhE-eeWJLTSNOWswZw=w240-h480-rw" alt="" />
         </C.Login>
       </C.ContainerBorder>
     </C.Container>
