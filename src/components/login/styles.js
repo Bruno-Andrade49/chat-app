@@ -14,7 +14,8 @@ export const ContainerBorder = styled.div`
   border-radius: 30px;
   width: 80%; /* Ajuste a largura do container da imagem e do formulário */
   background-color: #ffffff; /* Cor de fundo do container da imagem e do formulário */
-
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;  
+  
   @media (max-width: 1023px) {
     flex-direction: column; /* Layout de coluna em telas pequenas */
   }
