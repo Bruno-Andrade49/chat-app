@@ -9,8 +9,7 @@ const Default = () => {
             <MdMessage />
             <C.Title>Chat App</C.Title>
             <C.Info>
-                Agora você pode enviar e receber mensagens sem precisar manter seu
-                celular conectado à internet.
+                Insira um e-mail e inicie uma conversa!
             </C.Info>
         </C.Container>
     );
