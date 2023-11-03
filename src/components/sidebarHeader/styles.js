@@ -4,12 +4,11 @@ import { BiMessageAdd } from "react-icons/bi"
 
 export const Container = styled.div`
   height: 59px;
-  background-color: #00002b;
+  background-color: #010103;
   padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 5px;
   box-shadow: 0 1px 2px #0003;
 `;
 

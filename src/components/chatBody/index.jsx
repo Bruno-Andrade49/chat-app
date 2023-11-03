@@ -4,7 +4,7 @@ import * as C from "./styles";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Message from "../message";
 
-const ChatBody = ({ chatId }) => {
+const ChatBody = ({ chatId, chatPhoto }) => {
   const [messagesRes] = useCollection(
     db
       .collection("chats")
@@ -26,6 +26,7 @@ const ChatBody = ({ chatId }) => {
     <C.Container ref={refBody}>
       {messagesRes?.docs.map((message) => (
         <Message
+          photoURL={chatPhoto}
           key={message.id}
           user={message.data().user}
           message={{

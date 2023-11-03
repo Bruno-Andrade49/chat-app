@@ -6,9 +6,11 @@ export const Container = styled.div`
   justify-content: start;
   padding: 15px 20px;
   cursor: pointer;
+  transition: 0.5s;
 
   &:hover {
     background-color: #f0f2f5;
+    border-radius: 10px;
   }
 
   svg {
@@ -22,6 +24,7 @@ export const Container = styled.div`
 
   &.active {
     background-color: #DFE9F5;
+    border-radius: 10px;
   }
 `;
 
@@ -29,6 +32,7 @@ export const Name = styled.span`
   font-size: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #7d7da5;
 `;
 
 export const Avatar = styled.img`

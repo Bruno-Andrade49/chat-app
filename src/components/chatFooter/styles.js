@@ -1,3 +1,4 @@
+import { RiSendPlane2Line } from "react-icons/ri";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -5,7 +6,7 @@ export const Container = styled.div`
   bottom: 0;
   width: 100%;
   padding: 10px 20px;
-  background-color: #DFE9F5;
+  background-color: #010103;
   display: flex;
   box-shadow: 2px 1px 3px 1px #0003;
 
@@ -30,4 +31,17 @@ export const Input = styled.input`
   border-radius: 50px;
   width: 100%;
   box-shadow: inset 0 0 1px 1px #0003;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 `;
+
+export const Submit = styled(RiSendPlane2Line)`
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`

@@ -7,6 +7,8 @@ import Default from '../default';
 
 const Chat = ({ userChat }) => {
 
+  console.log(userChat)
+
   if (!userChat) {
     return <Default />
   }
@@ -14,7 +16,7 @@ const Chat = ({ userChat }) => {
   return (
     <C.Container>
       <ChatHeader photoURL={userChat?.photoURL} name={userChat?.name} />
-      <ChatBody chatId={userChat?.chatId} />
+      <ChatBody chatId={userChat?.chatId} chatPhoto={userChat?.photoURL} />
       <ChatFooter chatId={userChat?.chatId} />
     </C.Container>
   )

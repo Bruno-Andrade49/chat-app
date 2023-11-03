@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: calc(100vh - 70px);
   overflow-y: auto;
+  background-color: #010103;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -15,9 +16,8 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div``;
-
-export const Divider = styled.div`
-  margin: 0 10px;
-  border-top: solid 1px #ddd;
+export const Content = styled.div`
+  background-color: #424289;
+  margin: 5px 5px;
+  border-radius: 10px;
 `;

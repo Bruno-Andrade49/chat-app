@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as C from "./styles";
-import { MdSend } from "react-icons/md";
+import { RiSendPlane2Line } from "react-icons/ri";
 import { auth, db } from "../../services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase/compat/app";
@@ -30,7 +30,7 @@ const ChatFooter = ({ chatId }) => {
           onChange={(e) => setMessage(e.target.value)}
           value={message}
         />
-        <MdSend onClick={handleSendMessage} />
+        <C.Submit onClick={handleSendMessage} />
       </C.Form>
     </C.Container>
   );
