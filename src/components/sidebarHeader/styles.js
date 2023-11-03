@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { HiOutlineLogout } from "react-icons/hi"
+import { BiMessageAdd } from "react-icons/bi"
 
 export const Container = styled.div`
   height: 59px;
-  background-color: #f2f5f7;
+  background-color: #00002b;
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -14,8 +16,8 @@ export const Container = styled.div`
 export const Avatar = styled.img`
   width: 35px;
   height: 35px;
-  cursor: pointer;
-  border-radius: 50%;
+  border-end-end-radius: 50%;
+  border-top-left-radius: 50%;
 `;
 
 export const Options = styled.div`
@@ -29,3 +31,29 @@ export const Options = styled.div`
     cursor: pointer;
   }
 `;
+
+export const Logout = styled(HiOutlineLogout)`
+  position: relative;
+  bottom: 1.1px;
+  transition: 1s;
+
+  &:hover {
+    transform: scale(1.2);
+    border-radius: 50px;
+    background-color: #5555db;
+    padding: 5px;
+    color: aliceblue;
+  }
+`
+
+export const NewConversa = styled(BiMessageAdd)`
+  transition: 1s;
+
+  &:hover {
+    transform: scale(1.2);
+    border-radius: 50px;
+    background-color: #5555db;
+    padding: 5px;
+    color: aliceblue;
+  }
+`

@@ -8,6 +8,7 @@ const Login = () => {
   const handleSignin = () => {
     auth.signInWithPopup(provider).catch(alert);
   };
+
   return (
     <C.Container>
       <C.ContainerBorder>

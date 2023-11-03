@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import * as C from "./styles"
-import { MdDonutLarge, MdChat, MdMoreVert } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
+import { BiMessageAdd } from "react-icons/bi"
 import * as EmailValidator from "email-validator";
 import { auth, db } from "../../services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,15 +13,15 @@ const SidebarHeader = ({ setUserChat }) => {
   const [user] = useAuthState(auth);
 
   const refChat = db.collection("chats")
-  .where("users", "array-contains", user.email);
+    .where("users", "array-contains", user.email);
   const [chatSnapshot] = useCollection(refChat);
 
   const handleCreateChat = () => {
     const emailInput = prompt("Escreva o e-mail desejado:")
 
-    if(!emailInput) return
+    if (!emailInput) return
 
-    if(!EmailValidator.validate(emailInput)) {
+    if (!EmailValidator.validate(emailInput)) {
       return alert("E-mail inválido!");
     } else if (emailInput === user.email) {
       return alert("Insira um e-mail diferente do seu!");
@@ -41,15 +42,17 @@ const SidebarHeader = ({ setUserChat }) => {
 
   return (
     <C.Container>
-      <C.Avatar 
-      src={user.photoURL}
-      onClick={() => [auth.signOut(), setUserChat(null)]}
+      <C.Avatar
+        src={user.photoURL}
       />
+      
 
       <C.Options>
-        <MdDonutLarge />
-        <MdChat onClick={handleCreateChat} />
-        <MdMoreVert />
+        <C.NewConversa onClick={handleCreateChat} />
+        <C.Logout
+          size={20}
+          onClick={() => [auth.signOut(), setUserChat(null)]}
+        />
       </C.Options>
     </C.Container>
   )

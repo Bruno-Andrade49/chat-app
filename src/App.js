@@ -4,9 +4,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "./services/firebase";
 import Loading from './components/loading';
 import Login from './components/login';
-import Sidebar  from './components/sidebar';
+import Sidebar from './components/sidebar';
 import Chat from './components/chat';
- 
+
 
 
 function App() {
@@ -28,12 +28,11 @@ function App() {
   if (!user) return <Login />;
 
 
-
   return (
     <>
       <C.Container>
         <Sidebar setUserChat={setUserChat} userChat={userChat} />
-        <Chat userChat={userChat}/>
+        <Chat userChat={userChat} />
       </C.Container>
     </>
   );
